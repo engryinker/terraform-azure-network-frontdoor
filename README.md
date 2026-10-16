@@ -4,13 +4,13 @@ Org-standard Terraform wrapper for: **Front Door (Standard/Premium) profiles -- 
 
 This repo bundles 2 related upstream AVM modules into one wrapper, since they're normally deployed together.
 
-Deploys into an existing resource group (passed in via `resource_group_name` / `location`) -- this module does not create the resource group itself. Compose with [terraform-azure-naming](https://github.com/<org>/terraform-azure-naming) for names and [terraform-azure-tags](https://github.com/<org>/terraform-azure-tags) for the `tags` input.
+Deploys into an existing resource group (passed in via `resource_group_name` / `location`) -- this module does not create the resource group itself. Compose with [terraform-azure-naming](https://github.com/engryinker/terraform-azure-naming) for names and [terraform-azure-tags](https://github.com/engryinker/terraform-azure-tags) for the `tags` input.
 
 ## Usage
 
 ```hcl
 module "network-frontdoor" {
-  source = "git::https://github.com/<org>/terraform-azure-network-frontdoor.git?ref=v1.0.0"
+  source = "git::https://github.com/engryinker/terraform-azure-network-frontdoor.git?ref=v1.0.0"
 
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
